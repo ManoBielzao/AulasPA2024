@@ -60,72 +60,66 @@ int Navega(int escolha, int estado)
 
 int main()
 {
-    int escolha = 0;
-    int estado = 0;
+    // int escolha = 0;
+    // int estado = 0;
 
     
-    switch (estado)
-    {
-    case 0:
-        ImprimirTela(0);
-        scanf("%i", &escolha);
-        Navega(escolha, estado);
-        break;
-    case 1:
-    ImprimirTela(1);
-        scanf("%i", &escolha);
-        Navega(escolha, estado);
-        break;
+    // switch (estado)
+    // {
+    // case 0:
+    //     ImprimirTela(0);
+    //     scanf("%i", &escolha);
+    //     Navega(escolha, estado);
+    //     break;
+    // case 1:
+    // ImprimirTela(1);
+    //     scanf("%i", &escolha);
+    //     Navega(escolha, estado);
+    //     break;
 
-    case 2:
-    ImprimirTela(2);
-    scanf("%i", &escolha);
-    Navega(escolha, estado);
+    // case 2:
+    // ImprimirTela(2);
+    // scanf("%i", &escolha);
+    // Navega(escolha, estado);
 
-    default:
-        break;
-    }
+    // default:
+    //     break;
+    // }
 
+// char palavre[40];
+//     char *pont = " se liga na minha arma de piranhas";
+//     //char *otherpont; possue um limite de caracteres, apenas 3
+//     char otherpont[30];
 
+//     strcpy(palavre, "a");
+//     printf("%s\n", palavre);
+//     strcat(palavre, " eeeeeeeeeeeee");
+//     printf("%s\n", palavre);
+//     strcat(palavre, pont);
+//     printf("%s\n", palavre);
+
+//     printf("escreve ai uma string menoh:\n");
+//     scanf("%s", otherpont);
+//     printf("teu string ae: %s\n", otherpont);
+//     strcat(palavre, otherpont);
+//     printf("oia ai o bgl concatenado %s\n", palavre);
    
-   
+   char palavra[40];
+
+do
+{
+    printf("digite uma palavre kkkkkkk:\n");
+    scanf("%s", palavra);
+    
+} while (strcmp("palavre", palavra) != 0);
+
+printf("Ae krai kkkkkkkkk, demorou\n");
+
+char word[] = "vamos nos mamar mais";
+    char *pch;
+    
+    pch = strtok(word, " ");
+    printf("Ponteiro: %s\n", pch); 
 
     return 0;
 }
-
-
-    // char palavre[40];
-    // char *pont = " se liga na minha arma de piranhas";
-    // //char *otherpont; possue um limite de caracteres, apenas 3
-    // char otherpont[30];
-
-    // strcpy(palavre, "a");
-    // printf("%s\n", palavre);
-    // strcat(palavre, " eeeeeeeeeeeee");
-    // printf("%s\n", palavre);
-    // strcat(palavre, pont);
-    // printf("%s\n", palavre);
-
-    // printf("escreve ai uma string menoh:\n");
-    // scanf("%s", otherpont);
-    // printf("teu string ae: %s\n", otherpont);
-    // strcat(palavre, otherpont);
-    // printf("oia ai o bgl concatenado %s\n", palavre);
-
-
-// char palavra[40];
-
-// do
-// {
-//     printf("digite uma palavre kkkkkkk:\n");
-//     scanf("%s", palavra);
-    
-// } while (strcmp("palavre", palavra) != 0);
-
-// printf("Ae krai kkkkkkkkk, demorou\n");
-
-// char word[] = "vamos nos mamar mais";
-//     char *pch;
-    
-//     pch = strtok(word, " ");
-//     printf("Ponteiro: %s\n", pch);    
