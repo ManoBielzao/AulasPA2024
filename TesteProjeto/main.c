@@ -1,12 +1,17 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+typedef enum {
+    MENU,
+    ESCRITA_MENSAGEM,
+    TELA_3
+} TipoTela;
 typedef struct tela
 {
     char titulo[40];
     char info[45];
     int opcao;
-    TIPOTELA tipo_tela;
+    TipoTela tipo_tela;
 }TELA;
 
 TELA Tela_1[3] =
