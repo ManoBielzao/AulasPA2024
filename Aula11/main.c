@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include <string.h>
 
+//Lista Duplamente Encadeada
+
 typedef struct livro
 {
     char titulo[40];
@@ -13,6 +15,7 @@ typedef struct no
 {
     Livro info;
     struct no *prox;
+    struct no *ant;    
 }No;
 
 typedef struct lista
@@ -28,6 +31,7 @@ No *CriaNo(Livro book)
     No* novoNo = (No*)malloc(sizeof(No));
     novoNo->info = book;
     novoNo->prox = NULL;
+    novoNo->ant = NULL;
     return novoNo;
 }
 
@@ -45,8 +49,11 @@ void addNo_na_Lista(No *no, Lista *list)
         list->primeiro = no;
     }
     else
-    {
-        list->ultimo->prox = no;        
+    {   
+        list->ultimo->prox = no;
+         list->ultimo->prox->ant = list->ultimo;
+                
+                
     }    
     list->ultimo = no;
     list->marcador = no;
@@ -112,6 +119,7 @@ void ExcluiPrimeiro(Lista* lst)
 {
     lst->marcador = lst->primeiro;
     lst->primeiro = lst->primeiro->prox;
+    lst->primeiro->ant = NULL;
     free(lst->marcador);
     lst->marcador = lst->primeiro; 
 }
@@ -126,6 +134,7 @@ void exclui(Lista* lst, char* nome)
     if (strcmp(nome, lst->marcador->info.titulo) == 0)
     {
         lst->primeiro = lst->primeiro->prox;
+        lst->primeiro->ant = NULL;
         free(lst->marcador);
         lst->marcador = lst->primeiro;
         lst->contador--;
@@ -134,7 +143,6 @@ void exclui(Lista* lst, char* nome)
  
     while (lst->marcador != NULL && strcmp(nome, lst->marcador->info.titulo) != 0)
     {
-        anterior = lst->marcador;
         lst->marcador = lst->marcador->prox;
     }
 
@@ -147,7 +155,7 @@ void exclui(Lista* lst, char* nome)
 
     if (lst->marcador->prox == NULL)
     {
-        lst->ultimo = anterior;
+        lst->ultimo = lst->marcador->ant;
     }
     
 
