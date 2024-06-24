@@ -17,15 +17,15 @@ typedef struct no
 
 typedef struct lista
 {
-    No*primeiro;
-    No*marcador;
-    No*ultimo;
+    No *primeiro;
+    No *marcador;
+    No *ultimo;
     int contador;
 }Lista;
 
 No *CriaNo(Livro book)
 {
-    No* novoNo = (No*)malloc(sizeof(No));
+    No *novoNo = (No*)malloc(sizeof(No));
     novoNo->info = book;
     novoNo->prox = NULL;
     return novoNo;
@@ -33,7 +33,7 @@ No *CriaNo(Livro book)
 
 Lista criaLista()
 {
-    Lista novaLista = {NULL,NULL,0};
+    Lista novaLista = {NULL,NULL,NULL,0};
 
     return novaLista;
 }
@@ -104,7 +104,6 @@ void ImprimirLista(Lista list)
 //         }
         
 //     }
-    
 
 // }
 
@@ -113,13 +112,13 @@ void ExcluiPrimeiro(Lista* lst)
     lst->marcador = lst->primeiro;
     lst->primeiro = lst->primeiro->prox;
     free(lst->marcador);
-    lst->marcador = lst->primeiro; 
+    lst->marcador = lst->primeiro;
+    lst->contador--; 
 }
 
 
 void exclui(Lista* lst, char* nome)
 {
-    No *aux = NULL;
     No* anterior = lst->primeiro;
     lst->marcador = lst->primeiro;
 
@@ -163,9 +162,11 @@ int main()
     Livro infantil = {"Rei leao", "Simba", 1998};
     Livro outro_infantil = {"Branca de neve", "Anoes", 1900};
     Livro de_hj = {"Narnia","Vcs",2024};
+
     Lista lista_de_livros = criaLista();
 
     No *novoNo = CriaNo(infantil);
+
     addNo_na_Lista(novoNo, &lista_de_livros);
     novoNo = CriaNo(outro_infantil);
     addNo_na_Lista(novoNo, &lista_de_livros);
@@ -175,9 +176,16 @@ int main()
 
     // ImprimirLivro(infantil);
     ImprimirLista(lista_de_livros);
+    
+    // char resposta[40];
 
-    // exclui(&lista_de_livros, "Branca de neve");
+    // printf("Qual livro quer excluir?\n");
+    // scanf("%s", &resposta);
+
+    // exclui(&lista_de_livros, resposta);
+
     ExcluiPrimeiro(&lista_de_livros);
+    printf("\n");
     printf("Again\n");
     ImprimirLista(lista_de_livros);
 
