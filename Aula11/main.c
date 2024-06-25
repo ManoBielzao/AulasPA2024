@@ -5,7 +5,7 @@ int main()
 {
     Livro infantil = {"Rei leao", "Simba", 1998};
     Livro outro_infantil = {"Branca de neve", "Anoes", 1900};
-    Livro de_hj = {"Narnia","Vcs",2024};
+    Livro de_hj = {"Narnia","Vcs", 2024};
     Lista lista_de_livros = criaLista();
 
     No *novoNo = CriaNo(infantil);
