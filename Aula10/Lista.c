@@ -46,6 +46,8 @@ void ImprimirLista(Lista list)
     }
     
 }
+//PRIMEIRA VERSÃO DO EXCLUI
+
 // void exclui(Lista *lst, char *tit)
 // {
 //     while (lst->marcador != NULL)
